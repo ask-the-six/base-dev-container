@@ -1,3 +1,4 @@
+#!/bin/bash
 # Install dnf-plugins-core package
 dnf -y install dnf-plugins-core 
 
