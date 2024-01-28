@@ -1,6 +1,9 @@
 {
     "name": "Base-Dev-Container",
-    "dockerFile": "Dockerfile",
+    "build": { 
+		"context": "..",
+		"dockerfile": "Dockerfile"
+	},
     "customizations": {
         "vscode": {
             "settings": {
@@ -14,5 +17,6 @@
     },
     "mounts": [
         "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
-    ]
+    ],
+    "remoteUser": "root"
 }
