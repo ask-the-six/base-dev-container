@@ -1,15 +1,18 @@
 {
     "name": "Base-Dev-Container",
     "dockerFile": "Dockerfile",
-    "settings": { 
-        "terminal.integrated.shell.linux": "/bin/bash"
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            },
+            "extensions": [
+                "ms-azuretools.vscode-docker",
+                "ms-vscode-remote.remote-containers"
+            ]
+        }
     },
-    "extensions": [
-        "ms-azuretools.vscode-docker",
-        "ms-vscode-remote.remote-containers",
-    ],
     "mounts": [
         "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
     ]
 }
-
