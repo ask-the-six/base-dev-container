@@ -1,7 +1,7 @@
 ARG BASE_DOCKER_IMAGE=redhat/ubi8
 ARG INSTALLS_SH=installs.sh
 ENV DONT_PROMPT_WSL_INSTALL=true
-FROM ${DOCKER_IMAGE_NAME}
+FROM ${BASE_DOCKER_IMAGE}
 # Copy the scripts into the container
 COPY $INSTALLS_SH /tmp/installs.sh
 
@@ -9,4 +9,4 @@ COPY $INSTALLS_SH /tmp/installs.sh
 RUN chmod +x /tmp/installs.sh
 
 # Run the scripts
-RUN /scripts/installs.sh
+RUN /tmp/installs.sh
